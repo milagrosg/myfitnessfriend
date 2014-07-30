@@ -1,0 +1,5 @@
+# MyFitnessFriend (cousing of MyFitnessPal)
+
+This is the myfitnessfriend sample application while practicing some Ruby on Rails.
+
+by Mili Gutierrez
