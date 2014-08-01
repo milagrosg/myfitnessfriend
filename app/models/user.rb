@@ -35,4 +35,11 @@ class User < ActiveRecord::Base
     save!(validate: false)
     UserMailer.password_reset(self).deliver
   end
+
+  def send_confirmation_email
+    generate_token(:confirmation_token)
+    self.confirmation_sent_at = Time.zone.now
+    save!(validate: false)
+    UserMailer.confirmation_email(self).deliver
+  end
 end
