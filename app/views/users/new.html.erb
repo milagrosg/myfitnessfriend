@@ -11,17 +11,26 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :email %><br />
-		<%= f.text_field :email %>
-	</p>
-	<p>
-		<%= f.label :password %><br />
-		<%= f.password_field :password %>
-	</p>
-	<p>
-		<%= f.label :password_confirmation %><br />
-		<%= f.password_field :password_confirmation %>
-	</p>
-	<p class="button"><%= f.submit %></p>
+	<div class="form-group">
+		<p>
+			<%= f.label :email %>
+			<%= f.text_field :email, class: "form-control" %>
+		</p>
+	</div>
+	<div class="form-group">
+		<p>
+			<%= f.label :password %>
+			<%= f.password_field :password, class: "form-control" %>
+		</p>
+	</div>
+	<div class="form-group">
+		<p>
+			<%= f.label :password_confirmation %>
+			<%= f.password_field :password_confirmation, class: "form-control" %>
+		</p>
+	</div>
+	<div class="form-group">
+		<%= f.submit "Sign up", class: "btn btn-primary" %>
+	</div>
 <% end %>
+

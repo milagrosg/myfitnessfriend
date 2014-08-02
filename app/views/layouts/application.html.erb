@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Myfitnessfriend</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>MyFitnessFriend</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<div id="user_nav">
-	<% if current_user %>
-		Logged in as <%= current_user.email %>.
-		<%= link_to "Log out", logout_path %>
-	<% else %>
-		<%= link_to "Sign up", signup_path %> or
-		<%= link_to "Log in", login_path %>
-	<% end %>
-</div>
-
-<% flash.each do |name, msg| %>
-	<%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
-
-<%= yield %>
+	
+	<%= render 'layouts/header' %>
+	<div class="container">
+		<% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert alert-info") %>
+		<% end %>
+		<%= yield %>
+	</div>
 
 </body>
 </html>

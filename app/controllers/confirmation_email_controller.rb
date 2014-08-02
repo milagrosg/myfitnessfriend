@@ -5,7 +5,7 @@ class ConfirmationEmailController < ApplicationController
   def edit
     @user = User.find_by_confirmation_token!(params[:id])
     if @user
-      @user.confirmed = true
+      @user.update_attribute(:confirmed, true)
       redirect_to login_path, :notice => "Account has been confirmed."
     else
       redirect_to signup_path
