@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy', :as => 'logout'
   get 'login' => 'sessions#new', :as => 'login'
   get 'signup' => 'users#new', :as => 'signup'
-  root 'users#new'
+  root 'welcome#index'
   resources :users
   resources :sessions
   resources :password_resets
