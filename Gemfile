@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'   
 gem 'bootstrap-sass', '~> 3.2.0.1'  
 gem 'autoprefixer-rails'
+gem 'exception_notification'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.3.9'
